@@ -1,0 +1,67 @@
+[System]
+Name='CW_ALgo'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=15
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='SR'
+Range=[0 1]
+NumMFs=5
+MF1='VL':'trapmf',[-0.225 -0.025 0.025 0.225]
+MF2='L':'trapmf',[0.025 0.225 0.275 0.475]
+MF3='M':'trapmf',[0.275 0.475 0.525 0.725]
+MF4='H':'trapmf',[0.525 0.725 0.775 0.975]
+MF5='VH':'trapmf',[0.775 0.975 1.025 1.225]
+
+[Input2]
+Name='nr'
+Range=[1 6]
+NumMFs=3
+MF1='S':'trapmf',[-0.601587301587302 0.998412698412698 1.3984126984127 2.9984126984127]
+MF2='M':'trapmf',[2 2.5 3.5 4]
+MF3='LA':'trimf',[3 4.5 120]
+
+[Output1]
+Name='CW_size'
+Range=[0 116]
+NumMFs=15
+MF1='mf1':'trimf',[-14.5 2.22e-16 7.21]
+MF2='mf2':'trimf',[-0.306878306878303 14.1931216931217 28.6931216931217]
+MF3='mf3':'trimf',[14.5 29 43.5]
+MF4='mf4':'trimf',[29 43.5 58]
+MF5='mf5':'trimf',[43.5 58 72.5]
+MF6='mf6':'trimf',[58 72.5 87]
+MF7='mf7':'trimf',[72.5 87 101.5]
+MF8='mf8':'trimf',[87 101.5 116]
+MF9='mf9':'trimf',[101.5 116 130.5]
+MF10='mf10':'trimf',[-23.2 -4.441e-16 23.2]
+MF11='mf11':'trimf',[0 23.2 46.4]
+MF12='mf12':'trimf',[23.2 46.4 69.6]
+MF13='mf13':'trimf',[46.4 69.6 92.8]
+MF14='mf14':'trimf',[69.6 92.8 116]
+MF15='mf15':'trimf',[92.8 116 139.2]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 2 (1) : 1
+1 3, 3 (1) : 1
+2 1, 4 (1) : 1
+2 2, 5 (1) : 1
+2 3, 6 (1) : 1
+3 1, 7 (1) : 1
+3 2, 8 (1) : 1
+3 3, 9 (1) : 1
+4 1, 10 (1) : 1
+4 2, 11 (1) : 1
+4 3, 12 (1) : 1
+5 1, 13 (1) : 1
+5 2, 14 (1) : 1
+5 3, 15 (1) : 1
